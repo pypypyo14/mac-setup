@@ -1,4 +1,4 @@
-homebrew_packages:
+homebrew_formulae:
   - anyenv
   - awscli
   - direnv
@@ -7,3 +7,16 @@ homebrew_packages:
   - pylint
   - sqlite
   - wget
+
+homebrew_cask_formulae:
+  - authy
+  - slack
+  - iterm2
+  - docker
+  - alfred
+  - clipy
+  - google-chrome
+  - google-cloud-sdk
+  - google-japanese-ime
+  - visual-studio-code
+  - shiftit

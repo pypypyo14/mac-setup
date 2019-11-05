@@ -1,0 +1,8 @@
+---
+- name: vscode install
+  homebrew_cask:
+    name: visual-studio-code
+    state: present
+- name: vscode command install
+  debug:
+    msg: '"lineinfile"使ってあとでやる'
