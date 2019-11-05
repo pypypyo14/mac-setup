@@ -1,0 +1,9 @@
+homebrew_packages:
+  - anyenv
+  - awscli
+  - direnv
+  - jq
+  - peco
+  - pylint
+  - sqlite
+  - wget

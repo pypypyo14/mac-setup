@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  connection: local
+  vars_files:
+  - vars/vars.yml 
+  tasks:
+  - name: samlple
+    debug:
+      msg: '{{ item }}'
+    with_items: '{{ homebrew_packages }}'
