@@ -1,10 +1,13 @@
 ---
 - hosts: localhost
   connection: local
+  gather_facts: no
+  become: no
   vars_files:
-  - vars/vars.yml 
+    - vars/vars.yml
   roles:
     - homebrew
     - homebrew_cask
-    - git
-    - vscode
+    - geerlingguy.mas
+    - dotfiles
+    - vim

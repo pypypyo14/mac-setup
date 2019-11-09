@@ -1,0 +1,14 @@
+---
+- name: create bashprofile
+  template:
+    src: .bash_profile.j2
+    dest: "{{ home_dir }}/.bash_profile"
+## template error...
+# - name: create bashrc
+#   template:
+#     src: .bashrc.j2
+#     dest: "{{ home_dir }}/.bashrc"
+- name: create gitignoreglobal
+  template:
+    src: .gitignore_global.j2
+    dest: "{{ home_dir }}/.gitignore_global"

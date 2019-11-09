@@ -1,0 +1,1 @@
+vim_bundle_dir: "{{ home_dir }}/.vim/bundle"

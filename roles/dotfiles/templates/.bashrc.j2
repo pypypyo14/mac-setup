@@ -1,0 +1,63 @@
+# prompt settings
+function parse_git_dirty {
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
+}
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
+}
+export PS1='\n\[\033[01;32m\]\u@\[\033[01;32m\]\h \[\033[01;36m\]\w \[\033[1;35m\]$(parse_git_branch) \[\033[01;37m\]`date +"%H:%M:%S"` \n\[\033[01;34m\]\$\[\033[00m\] '
+
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+export PS1='$(kube_ps1)'$PS1
+
+# direnv
+eval "$(direnv hook bash)"
+if [ -d $HOME/.anyenv ] ; then
+    export PATH="$HOME/.anyenv/bin:$PATH"
+    eval "$(anyenv init -)"
+fi
+
+# Google Cloud SDK
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc'
+
+# complete
+complete -C '/usr/local/aws/bin/aws_completer' aws
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+
+# alias
+alias ls='ls -G'
+alias ll='ls -lG'
+alias la='ls -laG'
+alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew"
+alias k='kubectl'
+alias kg='kubectl get'
+alias kgpo='kubectl get pod'
+alias ka='kubectl apply'
+alias kd='kubectl describe'
+alias kdel='kubectl delete'
+alias rm='rm -i'
+alias chrome="open -a '/Applications/Google Chrome.app'"
+alias notice='terminal-notifier -message "コマンド完了"'
+# alias git='git-switch-trainer'
+
+# history
+peco_history() {
+    declare l=$(HISTTIMEFORMAT=  history | LC_ALL=C sort -r |  awk '{for(i=2;i<NF;i++){printf("%s%s",$i,OFS=" ")}print $NF}'   |  peco --query "$READLINE_LINE")
+    READLINE_LINE="$l"
+    READLINE_POINT=${#l}
+}
+bind -x '"\C-x\C-r": peco_history'
+
+# list
+list-aws-profiles(){
+  grep "^\[" ~/.aws/config | sed -e 's/\[//g' -e 's/\]//g' | cut -d ' ' -f 2
+}
+alias awslist='list-aws-profiles'
+
+# golang path
+GOPATH=$HOME/go
+
+#PATH
+PATH=$PATH:/usr/local/aws/bin:$GOPATH/bin:$GOPATH/src:$HOME/.anyenv/bin

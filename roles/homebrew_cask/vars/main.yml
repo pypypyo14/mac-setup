@@ -1,0 +1,17 @@
+homebrew_cask_repositories:
+homebrew_cask_formulae:
+  - authy
+  - alfred
+  - bitwarden
+  - clipy
+  - docker
+  - gyazo
+  - google-chrome
+  - google-cloud-sdk
+  - google-japanese-ime
+  - iterm2
+  - shiftit
+  - slack
+  - vagrant
+  - virtualbox
+  - visual-studio-code

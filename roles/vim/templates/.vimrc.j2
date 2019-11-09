@@ -1,0 +1,108 @@
+"""""""""""""""
+" .vimrc
+"""""""""""""""
+
+" Encode
+set encoding=utf-8
+
+" 見た目設定
+set number       " 行番号を表示
+set cursorline   " 行を強調
+set cursorcolumn " 列を強調
+set visualbell   " ビープ音を可視化
+set showmatch    " 対応する括弧を強調
+set list listchars=tab:\▸\- " tabを可視化
+
+" ステータスライン
+set laststatus=2   " 常に表示
+set statusline=%F  " ファイル名表示
+set statusline+=%h " ヘルプページなら[help]と表示
+set statusline+=%m " 変更チェック表示
+set statusline+=%r " 読み込み専用かどうか
+set statusline+=%w " プレビューウィンドウかどうか
+set statusline+=%= " 以降右寄せ
+set statusline+=[ENC=%{&fileencoding}]  " ファイルエンコーディング
+set statusline+=[LOW=%l/%L]              " 現在行数/全行数
+set statusline+=%{fugitive#statusline()} " Gitのブランチ名
+
+" コマンドライン
+set showcmd               " 入力中のコマンドをステータスに表示する
+set wildmode=list:longest " コマンドの補完
+
+" インデント
+set expandtab    " タブを半角スペースに
+set shiftwidth=4 " vimが表示するインデント幅
+set tabstop=4    " タブ文字の表示幅
+set smartindent  " 自動インデント
+
+" 検索
+set ignorecase " 検索文字列が小文字なら大文字小文字区別なく検索
+set smartcase  " 検索文字列に大文字が含まれていたら区別して検索
+set incsearch  " 検索文字入力時に順次対象文字列にヒットさせる
+set wrapscan   " 最初に戻る
+set hlsearch   " 検索結果のハイライト表示
+nmap <Esc><Esc> :nohlsearch<CR><Esc> " ESC連打でハイライト解除
+
+" 各種ファイルを作らない
+set nobackup   " backupファイル
+set noswapfile " swapファイル
+set noundofile " undoファイル
+
+" 編集中のファイルが変更されたら自動で読み直す
+set autoread
+
+" バッファが編集中でもその他のファイルを開けるように
+set hidden
+
+" 行末の1文字先までカーソルを移動できるように
+set virtualedit=onemore
+
+" [Backspace] で既存の文字を削除できるように設定
+set nocompatible
+set backspace=start,eol,indent
+
+" ----------------
+" NeoBundle
+" ----------------
+
+" Note: Skip initialization for vim-tiny or vim-small.
+if 0 | endif
+
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here:
+" Refer to |:NeoBundle-examples|.
+" Note: You don't set neobundle setting in .gvimrc!
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tomasr/molokai'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'bronson/vim-trailing-whitespace'
+
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
+" ---------------
+
+" カラースキーマ
+colorscheme molokai
+syntax on
+set t_Co=256

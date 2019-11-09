@@ -1,0 +1,26 @@
+homebrew_repositories:
+  - heroku/brew
+  - homebrew/cask
+  - wata727/tflint
+
+homebrew_formulae:
+  - anyenv
+  - awscli
+  - bash-completion
+  - curl
+  - direnv
+  - heroku
+  - jq
+  - kube-ps1
+  - kubectx
+  - kubernetes-cli
+  - mas
+  - md5sha1sum
+  - peco
+  - pylint
+  - sqlite
+  - telnet
+  - terraform_landspace
+  - tflint
+  - tmux
+  - wget
