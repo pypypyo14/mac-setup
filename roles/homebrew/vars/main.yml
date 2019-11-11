@@ -2,6 +2,7 @@ homebrew_repositories:
   - heroku/brew
   - homebrew/cask
   - wata727/tflint
+  - derailed/k9s
 
 homebrew_formulae:
   - anyenv
@@ -11,6 +12,7 @@ homebrew_formulae:
   - direnv
   - heroku
   - jq
+  - k9s
   - kube-ps1
   - kubectx
   - kubernetes-cli
