@@ -6,10 +6,13 @@ homebrew_repositories:
 
 homebrew_formulae:
   - anyenv
+  - assume-role
   - awscli
+  - aws-sam-cli
   - bash-completion
   - curl
   - direnv
+  - git-secrets
   - heroku
   - jq
   - k9s
@@ -17,12 +20,14 @@ homebrew_formulae:
   - kubectx
   - kubernetes-cli
   - mas
+  - mysql-client
   - md5sha1sum
   - peco
+  - pipenv
   - pylint
   - sqlite
   - telnet
-  - terraform_landspace
   - tflint
   - tmux
+  - tree
   - wget

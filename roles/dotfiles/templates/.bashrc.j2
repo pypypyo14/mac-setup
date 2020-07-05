@@ -22,7 +22,7 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.i
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc'
 
 # complete
-complete -C '/usr/local/aws/bin/aws_completer' aws
+complete -C '/usr/local/bin/aws_completer' aws
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 
@@ -52,12 +52,19 @@ bind -x '"\C-x\C-r": peco_history'
 
 # list
 list-aws-profiles(){
-  grep "^\[" ~/.aws/config | sed -e 's/\[//g' -e 's/\]//g' | cut -d ' ' -f 2
+  grep "^\[" ~/.aws/credentials | sed -e 's/\[//g' -e 's/\]//g' | cut -d ' ' -f 2
 }
 alias awslist='list-aws-profiles'
+
+# assume-role
+function assume-role {
+  eval $( $(which assume-role) $@);
+  export AWS_DEFAULT_REGION=ap-northeast-1
+}
 
 # golang path
 GOPATH=$HOME/go
 
 #PATH
-PATH=$PATH:/usr/local/aws/bin:$GOPATH/bin:$GOPATH/src:$HOME/.anyenv/bin
+PATH=/usr/local/bin:$PATH:/usr/local/aws/bin:$GOPATH/bin:$GOPATH/src:$HOME/.anyenv/bin
+PATH="/usr/local/opt/inetutils/libexec/gnubin:$PATH"

@@ -11,7 +11,8 @@ homebrew_cask_formulae:
   - google-japanese-ime
   - iterm2
   - shiftit
-  - slack
+  - skitch
   - vagrant
   - virtualbox
   - visual-studio-code
+  - wireshark
