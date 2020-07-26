@@ -1,6 +1,43 @@
 """""""""""""""
 " .vimrc
 """""""""""""""
+" ---------------
+" dain.vim setup
+" ---------------
+
+" Required:
+set runtimepath^={{ dein_vim_dest }}
+
+" Required:
+call dein#begin(expand('{{ dein_vim_dest }}'))
+
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+
+" Add or remove your plugins here:
+{% for plugin in dein_vim_plugins %}
+{% if plugin.revision is defined %}
+call dein#add('{{ plugin.name }}', { 'rev': '{{ plugin.revision }}' })
+{% else %}
+call dein#add('{{ plugin.name | default(plugin) }}')
+{% endif %}
+{% endfor %}
+
+" Required:
+call dein#end()
+
+" Required:
+filetype plugin indent on
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+" ---------------
+" nomal vim setup
+" ---------------
 
 " Encode
 set encoding=utf-8
@@ -12,6 +49,11 @@ set cursorcolumn " 列を強調
 set visualbell   " ビープ音を可視化
 set showmatch    " 対応する括弧を強調
 set list listchars=tab:\▸\- " tabを可視化
+
+" カラースキーマ
+colorscheme molokai
+syntax on
+set t_Co=256
 
 " ステータスライン
 set laststatus=2   " 常に表示
@@ -60,49 +102,3 @@ set virtualedit=onemore
 " [Backspace] で既存の文字を削除できるように設定
 set nocompatible
 set backspace=start,eol,indent
-
-" ----------------
-" NeoBundle
-" ----------------
-
-" Note: Skip initialization for vim-tiny or vim-small.
-if 0 | endif
-
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" My Bundles here:
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tomasr/molokai'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'bronson/vim-trailing-whitespace'
-
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-
-" ---------------
-
-" カラースキーマ
-colorscheme molokai
-syntax on
-set t_Co=256
