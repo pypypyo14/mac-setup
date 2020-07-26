@@ -1,3 +1,6 @@
+# todo
+デフォルトシェルをbash5.0に変更するロールを作る
+
 # before ansible-playbook running
 
 ```
