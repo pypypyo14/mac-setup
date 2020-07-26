@@ -8,7 +8,6 @@ homebrew_formulae:
   - anyenv
   - aws-sam-cli
   - assume-role
-  - awscli
   - aws-sam-cli
   - bash-completion
   - curl

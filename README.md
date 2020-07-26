@@ -20,5 +20,5 @@ ansible-galaxy install --roles-path ./roles geerlingguy.mas
 
 # exec
 ```
-ansible-playbook playbook.yml
+ansible-playbook playbook.yml -K
 ```

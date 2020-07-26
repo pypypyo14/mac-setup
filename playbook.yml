@@ -6,8 +6,9 @@
   vars_files:
     - vars/vars.yml
   roles:
+    - dotfiles
     - homebrew
     - homebrew_cask
     - geerlingguy.mas
-    - dotfiles
+    - awscli
     - vim
