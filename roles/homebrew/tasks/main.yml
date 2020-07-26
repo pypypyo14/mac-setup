@@ -8,10 +8,10 @@
     tap: "{{ item }}"
     state: "present"
   with_items: "{{ homebrew_repositories }}"
-  when: "{{ homebrew_repositories }}"
+  when: homebrew_repositories|bool
 
 - name: Install Homebrew formulae
   homebrew:
     name: "{{ homebrew_formulae }}"
     state: "present"
-  when: "{{ homebrew_formulae }}"
+  when: homebrew_formulae|bool

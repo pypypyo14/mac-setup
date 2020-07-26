@@ -1,13 +1,9 @@
 ---
-- name: Create Neobundle dir
-  file:
-    path: "{{ vim_bundle_dir }}"
-    state: directory
-- name: install Neobundle
-  git:
-    repo: https://github.com/Shougo/neobundle.vim.git
-    dest: "{{ vim_bundle_dir }}/neobundle.vim"
-- name: create .vimrc
-  template:
-    src: .vimrc.j2
-    dest: "{{ home_dir }}/.vimrc"
+- name: dein.vim file directory
+  file: path={{ dein_vim_dest }} state=directory
+
+- name: clone dein.vim repo
+  git: repo=https://github.com/Shougo/dein.vim.git dest={{ dein_vim_dest }}
+
+- name: generate .vimrc with plugins
+  template: src=.vimrc.j2 dest=~/.vimrc

@@ -1,1 +1,7 @@
-vim_bundle_dir: "{{ home_dir }}/.vim/bundle"
+dein_vim_dest: "{{ home_dir }}/.vim/bundle"
+dein_vim_plugins: 
+  - tpope/vim-fugitive
+  - tomasr/molokai
+  - Shougo/unite.vim
+  - ujihisa/unite-colorscheme
+  - bronson/vim-trailing-whitespace
