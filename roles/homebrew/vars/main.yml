@@ -1,11 +1,12 @@
 homebrew_repositories:
+  - aws/tap
   - heroku/brew
   - homebrew/cask
   - wata727/tflint
-  - derailed/k9s
 
 homebrew_formulae:
   - anyenv
+  - aws-sam-cli
   - assume-role
   - awscli
   - aws-sam-cli
@@ -15,7 +16,6 @@ homebrew_formulae:
   - git-secrets
   - heroku
   - jq
-  - k9s
   - kube-ps1
   - kubectx
   - kubernetes-cli
@@ -25,6 +25,7 @@ homebrew_formulae:
   - peco
   - pipenv
   - pylint
+  - remind101/formulae/assume-role
   - sqlite
   - telnet
   - tflint
