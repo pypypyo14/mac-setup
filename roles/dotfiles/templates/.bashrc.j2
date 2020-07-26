@@ -1,3 +1,4 @@
+{% raw %}
 # prompt settings
 function parse_git_dirty {
   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
@@ -12,6 +13,8 @@ export PS1='$(kube_ps1)'$PS1
 
 # direnv
 eval "$(direnv hook bash)"
+
+# anyenv
 if [ -d $HOME/.anyenv ] ; then
     export PATH="$HOME/.anyenv/bin:$PATH"
     eval "$(anyenv init -)"
@@ -22,7 +25,7 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.i
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc'
 
 # complete
-complete -C '/usr/local/bin/aws_completer' aws
+complete -C aws_completer aws
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 
@@ -68,3 +71,4 @@ GOPATH=$HOME/go
 #PATH
 PATH=/usr/local/bin:$PATH:/usr/local/aws/bin:$GOPATH/bin:$GOPATH/src:$HOME/.anyenv/bin
 PATH="/usr/local/opt/inetutils/libexec/gnubin:$PATH"
+{% endraw %}

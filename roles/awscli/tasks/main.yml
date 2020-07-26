@@ -20,11 +20,6 @@
 
     when: result.rc == 1
 
-  - name: add completion to .bashrc
-    lineinfile:
-      path: ~/.bashrc
-      line: complete -C aws_completer aws
-
   - name: delete awscli installer
     file:
       path: /tmp/AWSCLIV2.pkg

@@ -1,6 +1,3 @@
-# todo
-- fix dotfiles/tasks/main.yml (.bashrc)
-
 # before ansible-playbook running
 
 ```
