@@ -2,7 +2,7 @@
 
 ```
 # install homebrew
-(https://qiita.com/pypypyo14/items/4bf3b8bd511b6e93c9f9)
+(https://brew.sh/index_ja)
 
 # install ansible
 brew install ansible
