@@ -6,6 +6,7 @@
   vars_files:
     - vars/vars.yml
   roles:
+    - bash
     - dotfiles
     - homebrew
     - homebrew_cask
