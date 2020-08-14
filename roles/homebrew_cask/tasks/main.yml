@@ -4,11 +4,11 @@
     tap: "{{ item }}"
     state: "present"
   with_items: "{{ homebrew_cask_repositories }}"
-  when: homebrew_cask_repositories|bool
+  when: homebrew_cask_repositories is defined
 
 - name: Install Homebrew Cask formulae
   homebrew_cask:
     name: "{{ item }}"
     state: present
   with_items: "{{ homebrew_cask_formulae }}" 
-  when: homebrew_cask_formulae|bool
+  when: homebrew_cask_formulae is defined

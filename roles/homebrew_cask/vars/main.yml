@@ -1,4 +1,3 @@
-homebrew_cask_repositories:
 homebrew_cask_formulae:
   - authy
   - alfred
@@ -10,6 +9,7 @@ homebrew_cask_formulae:
   - google-cloud-sdk
   - google-japanese-ime
   - iterm2
+  - kindle
   - shiftit
   - skitch
   - visual-studio-code
