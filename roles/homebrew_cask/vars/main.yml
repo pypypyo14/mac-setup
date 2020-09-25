@@ -5,6 +5,7 @@ homebrew_cask_formulae:
   - clipy
   - docker
   - dropbox
+  - evernote
   - google-chrome
   - google-cloud-sdk
   - google-japanese-ime
