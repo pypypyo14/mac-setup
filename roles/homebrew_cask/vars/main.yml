@@ -12,6 +12,7 @@ homebrew_cask_formulae:
   - google-japanese-ime
   - iterm2
   - kindle
+  - notion
   - shiftit
   - skitch
   - visual-studio-code
