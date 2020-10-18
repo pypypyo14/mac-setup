@@ -3,6 +3,7 @@ homebrew_cask_formulae:
   - alfred
   - bitwarden
   - clipy
+  - dash
   - docker
   - dropbox
   - evernote
