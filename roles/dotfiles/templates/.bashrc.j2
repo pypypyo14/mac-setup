@@ -14,11 +14,8 @@ export PS1='$(kube_ps1)'$PS1
 # direnv
 eval "$(direnv hook bash)"
 
-# anyenv
-if [ -d $HOME/.anyenv ] ; then
-    export PATH="$HOME/.anyenv/bin:$PATH"
-    eval "$(anyenv init -)"
-fi
+# asdf
+. /usr/local/opt/asdf/asdf.sh
 
 # Google Cloud SDK
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc'

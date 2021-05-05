@@ -16,5 +16,6 @@ homebrew_cask_formulae:
   - notion
   - shiftit
   - skitch
+  - slack
   - visual-studio-code
   - wireshark

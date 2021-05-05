@@ -4,8 +4,8 @@ homebrew_repositories:
   - homebrew/cask
   - wata727/tflint
 
-homebrew_formulae:
-  - anyenv
+ homebrew_formulae:
+  - asdf
   - aws-sam-cli
   - assume-role
   - aws-sam-cli
