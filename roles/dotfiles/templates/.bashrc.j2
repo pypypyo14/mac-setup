@@ -8,9 +8,6 @@ function parse_git_branch {
 }
 export PS1='\n\[\033[01;32m\]\u@\[\033[01;32m\]\h \[\033[01;36m\]\w \[\033[1;35m\]$(parse_git_branch) \[\033[01;37m\]`date +"%H:%M:%S"` \n\[\033[01;34m\]\$\[\033[00m\] '
 
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
-export PS1='$(kube_ps1)'$PS1
-
 # direnv
 eval "$(direnv hook bash)"
 
@@ -31,16 +28,9 @@ alias ls='ls -G'
 alias ll='ls -lG'
 alias la='ls -laG'
 alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew"
-alias k='kubectl'
-alias kg='kubectl get'
-alias kgpo='kubectl get pod'
-alias ka='kubectl apply'
-alias kd='kubectl describe'
-alias kdel='kubectl delete'
 alias rm='rm -i'
 alias chrome="open -a '/Applications/Google Chrome.app'"
 alias notice='terminal-notifier -message "コマンド完了"'
-# alias git='git-switch-trainer'
 
 # history
 peco_history() {
@@ -56,16 +46,8 @@ list-aws-profiles(){
 }
 alias awslist='list-aws-profiles'
 
-# assume-role
-function assume-role {
-  eval $( $(which assume-role) $@);
-  export AWS_DEFAULT_REGION=ap-northeast-1
-}
-
-# golang path
-GOPATH=$HOME/go
 
 #PATH
-PATH=/usr/local/bin:$PATH:/usr/local/aws/bin:$GOPATH/bin:$GOPATH/src:$HOME/.anyenv/bin
+PATH=/usr/local/bin:$PATH:/usr/local/aws/bin
 PATH="/usr/local/opt/inetutils/libexec/gnubin:$PATH"
 {% endraw %}

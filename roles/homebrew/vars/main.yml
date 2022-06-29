@@ -1,33 +1,24 @@
 homebrew_repositories:
   - aws/tap
+  - classmethod/repos
   - heroku/brew
   - homebrew/cask
-  - wata727/tflint
 
  homebrew_formulae:
   - asdf
-  - aws-sam-cli
-  - assume-role
+  - aurl
+  - awscli
   - aws-sam-cli
   - bash-completion
   - curl
+  - cfn-lint
   - direnv
   - git-secrets
-  - heroku
   - jq
-  - kube-ps1
-  - kubectx
-  - kubernetes-cli
   - mas
-  - mysql-client
   - md5sha1sum
   - peco
-  - pipenv
-  - pylint
-  - remind101/formulae/assume-role
-  - sqlite
   - telnet
-  - tflint
   - tmux
   - tree
   - wget

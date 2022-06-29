@@ -1,6 +1,6 @@
 bash_bin: "/usr/local/bin/bash"
 tmp_dir: "/tmp/bash/"
-version: 5.0
+version: 5.1
 patch_versions:
   - "001"
   - "002"
@@ -18,5 +18,3 @@ patch_versions:
   - "014"
   - "015"
   - "016"
-  - "017"
-  - "018"

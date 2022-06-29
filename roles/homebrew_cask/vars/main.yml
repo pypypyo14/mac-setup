@@ -1,18 +1,16 @@
 homebrew_cask_formulae:
   - authy
   - alfred
+  - aws-vault
   - bitwarden
   - clipy
-  - corretto
-  - dash
   - docker
-  - dropbox
-  - evernote
   - google-chrome
   - google-cloud-sdk
   - google-japanese-ime
   - iterm2
   - kindle
+  - ngrok
   - notion
   - shiftit
   - skitch

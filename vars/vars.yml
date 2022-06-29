@@ -1,6 +1,4 @@
 mas_installed_apps:
-  - { id: 485812721, name: "TweetDeck" }
   - { id: 539883307, name: "Line" }
   - { id: 1278508951, name: "Trello" }
-  - { id: 1429033973, name: "RunCat" }
 home_dir: "{{ lookup('env','HOME') }}"
